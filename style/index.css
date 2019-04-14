@@ -59,7 +59,15 @@ option {
 select option:disabled {
   background-color: rgb(196, 191, 191);
 }
+input:invalid {
+  /* background: url("https://img.icons8.com/plasticine/100/000000/high-priority.png")
+    no-repeat right; */
+  border: 1px solid rgb(194, 10, 10);
+  /* background-size: 8%; */
+}
 input[type="text"],
+input[type="email"],
+input[type="number"],
 ::placeholder,
 select,
 option {
@@ -162,10 +170,13 @@ input[type="checkbox"] {
   background-color: #9b841e;
   box-shadow: 0 5px 15px #05504a;
 }
+footer h5 {
+  font-size: 13px;
+}
 footer h5 a {
   text-align: center;
-  color: white;
-  text-shadow: #343a40 1px 1px;
+  color: #742c26;
+  /* text-shadow: white 0.2px 0.2px; */
 }
 @media screen and (max-width: 950px) {
   header > h1 {
@@ -194,11 +205,16 @@ footer h5 a {
   select,
   option,
   input[type="text"],
+  input[type="email"],
+  input[type="number"],
   textarea {
     font-size: 12px;
   }
   #submit {
     font-size: 12px;
+  }
+  footer h5 {
+    font-size: 11px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -228,6 +244,8 @@ footer h5 a {
   select,
   option,
   input[type="text"],
+  input[type="email"],
+  input[type="number"],
   textarea {
     font-size: 10px;
   }
@@ -236,5 +254,8 @@ footer h5 a {
     margin-top: 2vh;
     margin-bottom: 1vh;
     padding: 1vh 3vw;
+  }
+  footer h5 {
+    font-size: 9px;
   }
 }
