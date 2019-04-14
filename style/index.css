@@ -1,0 +1,240 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+.align-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.align-data label {
+  width: 30%;
+  margin: 1vw;
+  padding: 1vw;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.align-data > div {
+  width: 70%;
+  border: solid 1px rgb(150, 229, 223);
+  margin: 1vw;
+  padding: 1vw;
+}
+.align-data input {
+  width: 70%;
+  border: solid 1px rgb(150, 229, 223);
+  margin: 1vw;
+  padding: 1vw;
+  outline: none;
+  background-color: transparent;
+}
+.align-data select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.align-data textarea {
+  width: 70%;
+  border: solid 1px rgb(150, 229, 223);
+  margin: 1vw;
+  padding: 1vw;
+  background-color: #669f9a;
+  resize: vertical;
+}
+textarea {
+  text-shadow: #343a40 0.5px 0.5px;
+  font-family: "Source Code Pro";
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+option {
+  background-color: #009184;
+}
+select option:disabled {
+  background-color: rgb(196, 191, 191);
+}
+input[type="text"],
+::placeholder,
+select,
+option {
+  text-shadow: #343a40 0.5px 0.5px;
+  font-family: "Source Code Pro";
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  min-width: 220px;
+}
+#title {
+  color: white;
+  text-shadow: #343a40 4px 2px;
+  text-align: center;
+}
+#description {
+  text-align: center;
+}
+#home {
+  background: none;
+}
+#home-bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  opacity: 0.2;
+}
+#home-overlay {
+  border: solid 2px #43ded1;
+  width: 70vw;
+  background-color: rgba(0, 145, 132, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5vw;
+  color: white;
+  text-shadow: #343a40 0.5px 0.5px;
+  font-family: "Source Code Pro";
+  font-weight: bold;
+  min-width: 250px;
+  min-height: 762px;
+}
+#survey-form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+#form-label {
+  width: 100%;
+}
+#certifications {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+input[type="radio"] {
+  margin-right: 0%;
+  width: 5%;
+}
+input[type="radio"]:nth-child(1) {
+  margin-left: 0%;
+}
+#technologies {
+  display: flex;
+  flex-direction: column;
+}
+#technologies > span {
+  margin-right: 5%;
+}
+input[type="checkbox"] {
+  margin-right: 0%;
+  width: 2.5%;
+}
+#submit {
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  padding: 2vh 6vw;
+  border: none;
+  background-color: #af9523;
+  text-shadow: #343a40 0.5px 0.5px;
+  font-family: "Source Code Pro";
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: #9b841e;
+  box-shadow: 0 5px 15px #05504a;
+}
+footer h5 a {
+  text-align: center;
+  color: white;
+  text-shadow: #343a40 1px 1px;
+}
+@media screen and (max-width: 950px) {
+  header > h1 {
+    font-size: 24px;
+  }
+  #home-overlay {
+    font-size: 12px;
+  }
+  .align-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .align-data label {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1vw;
+    padding-top: 1vw;
+    justify-content: center;
+    width: 100%;
+  }
+  #survey-form {
+    margin-top: 3vh;
+  }
+  ::placeholder,
+  select,
+  option,
+  input[type="text"],
+  textarea {
+    font-size: 12px;
+  }
+  #submit {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 450px) {
+  header > h1 {
+    font-size: 18px;
+  }
+  #home-overlay {
+    font-size: 10px;
+  }
+  .align-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .align-data label {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1vw;
+    padding-top: 1vw;
+    justify-content: center;
+    width: 100%;
+  }
+  #survey-form {
+    margin-top: 1.5vh;
+  }
+  ::placeholder,
+  select,
+  option,
+  input[type="text"],
+  textarea {
+    font-size: 10px;
+  }
+  #submit {
+    font-size: 10px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    padding: 1vh 3vw;
+  }
+}
