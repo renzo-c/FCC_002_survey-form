@@ -8,7 +8,10 @@
     <meta name="description" content="FCC 2nd project" />
     <meta name="author" content="SitePoint" />
     <link rel="stylesheet" href="./style/index.css" />
-    <!-- <link rel="shortcut icon" href="./assets/img/favicon96x96.png" /> -->
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/ios/50/000000/test-passed.png"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -28,22 +31,23 @@
         muted
       ></video>
     </section>
-    <header id="title">
-      <h1>SURVEY: TECHNOLOGICAL KNOWLEDGE</h1>
+    <header>
+      <h1 id="title">SURVEY: TECHNOLOGICAL KNOWLEDGE</h1>
     </header>
     <div id="home-overlay">
       <p id="description">
         Please fill the following survey regarding your knowledge about software
         technologies:
       </p>
-      <form id="survey-form">
+      <form id="survey-form" name="myForm" onsubmit="return validateForm()">
         <div id="form-label">
           <div class="align-data">
             <label id="name-label" for="name">
-              <div>Name</div>
+              <div>Name*</div>
               <div>:</div>
             </label>
             <input
+              required
               id="name"
               type="text"
               name="complete-name"
@@ -52,24 +56,28 @@
           </div>
           <div class="align-data">
             <label id="email-label" for="email">
-              <div>Email</div>
+              <div>Email*</div>
               <div>:</div>
             </label>
             <input
+              required
               id="email"
-              type="text"
+              type="email"
               name="email"
               placeholder="Your email..."
             />
           </div>
           <div class="align-data">
             <label id="number-label" for="number">
-              <div>Age</div>
+              <div>Age* (1 - 120)</div>
               <div>:</div>
             </label>
             <input
+              required
               id="number"
-              type="text"
+              type="number"
+              min="1"
+              max="120"
               name="age"
               placeholder="Your age..."
             />
@@ -84,10 +92,10 @@
             <div>
               <select id="dropdown" name="role">
                 <option value="empty" selected disabled>Select a role</option>
-                <option value="student">High School Student</option>
-                <option value="student">CS Student</option>
-                <option value="csLearner">CS Learner</option>
-                <option value="csEngineer">CS Engineer</option>
+                <option value="hss">High School Student</option>
+                <option value="css">CS Student</option>
+                <option value="csl">CS Learner</option>
+                <option value="cse">CS Engineer</option>
                 <option value="notSay">Prefer not to say</option>
                 <option value="other">Other</option>
               </select>
@@ -105,11 +113,11 @@
                 <option value="empty" selected disabled
                   >Select a language program</option
                 >
-                <option value="student">Java</option>
-                <option value="student">JavaScript</option>
-                <option value="csLearner">Ruby</option>
-                <option value="csEngineer">Python</option>
-                <option value="csEngineer">C</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Python">Python</option>
+                <option value="C">C</option>
                 <option value="notSay">Prefer not to say</option>
                 <option value="other">Other</option>
               </select>
@@ -138,49 +146,52 @@
             </div>
           </div>
           <div class="align-data">
-            <label id="technologies-label" for="technologies">
-              <div>
-                Which libraries / frameworks have you been learning up to know:
+            <form name="radioForm">
+              <label id="technologies-label" for="technologies">
+                <div>
+                  Which libraries / frameworks have you been learning up to
+                  know:
+                </div>
+                <div>:</div>
+              </label>
+              <div id="technologies">
+                <div>
+                  <input type="checkbox" name="technologies" value="ReactJs" />
+                  <span>ReactJS</span>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="technologies"
+                    value="React Native"
+                  />
+                  <span>React Native</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="technologies" value="Ionic" />
+                  <span>Ionic</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="technologies" value="Flutter" />
+                  <span>Flutter</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="technologies" value="Xamarin" />
+                  <span>Xamarin</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="technologies" value="vue" />
+                  <span>Vue</span>
+                </div>
               </div>
-              <div>:</div>
-            </label>
-            <div id="technologies">
-              <div>
-                <input type="checkbox" name="technologies" value="ReactJs" />
-                <span>ReactJS</span>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="technologies"
-                  value="React Native"
-                />
-                <span>React Native</span>
-              </div>
-              <div>
-                <input type="checkbox" name="technologies" value="Ionic" />
-                <span>Ionic</span>
-              </div>
-              <div>
-                <input type="checkbox" name="technologies" value="Flutter" />
-                <span>Flutter</span>
-              </div>
-              <div>
-                <input type="checkbox" name="technologies" value="Xamarin" />
-                <span>Xamarin</span>
-              </div>
-              <div>
-                <input type="checkbox" name="technologies" value="vue" />
-                <span>Vue</span>
-              </div>
-            </div>
+            </form>
           </div>
           <div class="align-data">
             <label id="comments" for="comments">
               <div>Any Comments or Suggestions? (text box)</div>
               <div>:</div>
             </label>
-            <textarea placeholder="Some text..."></textarea>
+            <textarea placeholder="Some text..." name="comment"></textarea>
           </div>
           <div class="align-data">
             <button id="submit">SUBMIT</button>
@@ -198,6 +209,7 @@
         >
       </h5>
     </footer>
+    <script src="./scripts/index.js"></script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <!-- Hello Camper!
         For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
